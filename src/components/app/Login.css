@@ -1,0 +1,36 @@
+
+.popupContent{
+    width: 350px;
+    height: 300px;
+    background-color: white;
+    display: block;
+    border-radius: 20px;
+    z-index: 100;
+    text-align: center;
+    
+  }
+
+  .popupContent p{
+    font-size: 2em;
+    font-weight: 800;
+    padding: -20px;
+
+  }
+
+  .popupContent input{
+    display: block;
+    width: 70%;
+    margin:  15px auto;
+    font-size: 1.2em;
+    padding: 5px 10px ;
+
+  }
+
+  .popupContent button{
+    font-size: 1.6em;
+    padding: 10px 30px;
+    background-color: rgb(5, 75, 77);
+    color: white;
+    border-radius: 5px;
+    margin-top: 20px;
+  }

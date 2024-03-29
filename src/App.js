@@ -1,23 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
+import React, {useState, useCallback} from "react"
+import { AuthProvider, useAuth} from './components/AuthContext';
+import dashboard from './components/dashboard';
+import Login from './components/app/Login';
+import Signup from './components/Signup';
+
 
 function App() {
+  let[popupstyle, setPoppustyle]= useState({visibility:"visible"})
+  let [compo,setcompo] = useState(<Login/>)
+
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="header">
+       <div className="btnBack"> 
+       <button onClick={ () => {setPoppustyle({visibility:"visible"});setcompo(<Login/>)}}>Login</button>
+       <button onClick={ () => {setPoppustyle({visibility:"visible"});setcompo(<Signup/>)}}>Signup</button>
+       </div>
+      </div>
+
+      <div className="popupBack" style={popupstyle}>
+        <div className="blurBack" onClick={() => {setPoppustyle({visibility : hidden})}}></div>
+        {compo}
+      </div>
     </div>
   );
 }
